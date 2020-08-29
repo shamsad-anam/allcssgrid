@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: calc(100% - 150px);
+  margin: 0 auto;
+  background-color: rgb(159, 159, 233);
+}
+
+h1 {
+  text-align: center;
+  padding: 10px 0;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  & > div {
+    background-color: rgb(250, 230, 167);
+    border: 1px solid black;
+    font-size: 24px;
+    text-align: center;
+  }
+}
+
+//variables -- columns and gutters
+$columns: 12;
+$gutter: 15px;
+
+@for $i from 1 through $columns {
+  .col-#{$i} {
+    flex: 0 0 100% / $columns * $i;
+    padding: 0px $gutter;
+  }
+  .offset-#{$i} {
+    margin-left: 100% / $columns * $i;
+  }
+  .order-#{$i} {
+    order: #{$i};
+  }
+}
+
+$window-sizes: (
+  xs: 340px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+);
+
+@each $br, $size in $window-sizes {
+  @media only screen and (min-width: #{$size}) {
+    @for $i from 1 through $columns {
+      .col-#{$br}-#{$i} {
+        flex: 0 0 100% / $columns * $i;
+      }
+      .offset-#{$br}-#{$i} {
+        margin-left: 100% / $columns * $i;
+      }
+      .order-#{$br}-#{$i} {
+        order: $i;
+      }
+    }
+  }
+}
