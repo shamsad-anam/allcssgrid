@@ -26,8 +26,29 @@ h1 {
 }
 
 //variables -- columns and gutters
-$columns: 12;
+$columns: 16;
 $gutter: 15px;
+
+$window-sizes: (
+  xs: 340px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+);
+
+$breakpoints: xs, sm, md, lg, xl;
+
+%foo {
+  flex: 0 0 100%;
+}
+@each $br in $breakpoints {
+  @for $i from 1 through $columns {
+    .col-#{$br}-#{$i} {
+      @extend %foo;
+    }
+  }
+}
 
 @for $i from 1 through $columns {
   .col-#{$i} {
@@ -41,14 +62,6 @@ $gutter: 15px;
     order: #{$i};
   }
 }
-
-$window-sizes: (
-  xs: 340px,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-);
 
 @each $br, $size in $window-sizes {
   @media only screen and (min-width: #{$size}) {
