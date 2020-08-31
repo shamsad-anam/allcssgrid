@@ -1,14 +1,7 @@
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
 .container {
   max-width: calc(100% - 150px);
   margin: 0 auto;
-  background-color: #9f9fe9;
+  border: 1px solid red;
 }
 
 h1 {
@@ -25,7 +18,7 @@ h1 {
 }
 
 .row > div {
-  background-color: #fae6a7;
+  background-color: #e0e0e0;
   border: 1px solid black;
   font-size: 24px;
   text-align: center;

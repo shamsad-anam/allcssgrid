@@ -1,13 +1,7 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .container {
   max-width: calc(100% - 150px);
   margin: 0 auto;
-  background-color: rgb(159, 159, 233);
+  border: 1px solid red;
 }
 
 h1 {
@@ -18,7 +12,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   & > div {
-    background-color: rgb(250, 230, 167);
+    background-color: rgb(224, 224, 224);
     border: 1px solid black;
     font-size: 24px;
     text-align: center;
